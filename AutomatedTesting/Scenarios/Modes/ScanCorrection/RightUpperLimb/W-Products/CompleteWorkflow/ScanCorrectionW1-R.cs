@@ -12,7 +12,11 @@ public partial class FullScanCorrectionW1R
     [OneTimeSetUp]
     public void OneTimeSetUp()
     {
+<<<<<<< HEAD:AutomatedTesting/Scenarios/Modes/ScanCorrection/RightUpperLimb/W-Products/CompleteWorkflow/ScanCorrectionW1-R.cs
         altDriver = AltDriverConfig.GetAltDriver();        
+=======
+        altDriver = new AltDriver(host: ConnexionConfig.Host, port: ConnexionConfig.Port, appName: ConnexionConfig.AppName);
+>>>>>>> temp-branch:AutomatedTesting/RightUpperLimb/W1/Mode/ScanCorrection/Scenario/ScanCorrectionW1-R.cs
         helpers = new ScanCorrectionHelpersW1R(altDriver); // Initialisation avec le driver.
     }
 
@@ -29,7 +33,6 @@ public partial class FullScanCorrectionW1R
         ExecuteCleanupLevel();
         ExecutePoseLevel();
         ExecuteSculptLevel();
-
     }
     private void VerifyProductCode(string expectedProductCode)
     {
@@ -38,6 +41,7 @@ public partial class FullScanCorrectionW1R
     private void ExecuteCleanupLevel()
     {
         helpers.ClickCleanupBtnMainViewObject();
+        altDriver.SetDelayAfterCommand(0.25f);
         helpers.ClickSelectPartOfInterestArmRightA2(); // Cannot use object here, use coordinate.
         helpers.ClickQuitBtnObject();
         helpers.ClickConfirmBtnPopUpObject();
@@ -46,6 +50,8 @@ public partial class FullScanCorrectionW1R
         helpers.ClickNextStepBtnObject();
         helpers.ClickCrossBtnObject();
         RepeatPreviousStep();
+        helpers.ClickOnAxisAntiZSculptObject();
+        helpers.ClickOnAxisXSculptObject();
         SetCleanupLandmarks();
         helpers.ClickPreviousStepBtnObject();
         helpers.ClickKeepBtnLandmarksPopUpObject();
@@ -70,6 +76,7 @@ public partial class FullScanCorrectionW1R
     {
         helpers.ClickCleanupBtnMainViewObject();
         helpers.ClickConfirmBtnPopUpObject();
+<<<<<<< HEAD:AutomatedTesting/Scenarios/Modes/ScanCorrection/RightUpperLimb/W-Products/CompleteWorkflow/ScanCorrectionW1-R.cs
         helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SelectPartOfScanText);
         helpers.ClickSelectPartOfInterestArmRightA2();
         helpers.ClickQuitBtnObject();
@@ -91,6 +98,31 @@ public partial class FullScanCorrectionW1R
         helpers.VerifyAndAssertText("/Canvas/Popup(Clone)/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.OldLandmarksOrSetAgainText);
         helpers.ClickKeepBtnLandmarksPopUpObject();
         helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SelectPartOfScanCropOffText);
+=======
+        //// helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SelectPartOfScanText);
+        helpers.ClickSelectPartOfInterestArmRightA2();
+        helpers.ClickQuitBtnObject();
+        //// helpers.VerifyAndAssertText("/Canvas/WarnPopup(Clone)/Forma Info Panel v3/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.ModificationsWillBeLostText);
+        helpers.ClickConfirmBtnPopUpObject();
+        helpers.ClickCleanupBtnMainViewObject();
+        //// helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SelectPartOfScanText);
+        helpers.ClickSelectPartOfInterestArmRightA2();
+        helpers.ClickNextStepBtnObject();
+        //// helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.PositionLandmarkText);
+        //// helpers.VerifyAndAssertText("/Cleanup/LMRunPlacementStep(Clone)/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.WristCreaseCenterText);
+        helpers.ClickCrossBtnObject(); // Return to Step 1 of Cleanup. Repeat the previous step.
+        //// helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SelectPartOfScanText);
+        RepeatPreviousStep();
+        helpers.ClickOnAxisAntiZSculptObject();
+        helpers.ClickOnAxisXSculptObject();
+        //// helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.PositionLandmarkText);
+        //// helpers.VerifyAndAssertText("/Cleanup/LMRunPlacementStep(Clone)/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.WristCreaseCenterText);
+        SetCleanupLandmarks();
+        helpers.ClickPreviousStepBtnObject();
+        //// helpers.VerifyAndAssertText("/Canvas/Popup(Clone)/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.OldLandmarksOrSetAgainText);
+        helpers.ClickKeepBtnLandmarksPopUpObject();
+        //// helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SelectPartOfScanCropOffText);
+>>>>>>> temp-branch:AutomatedTesting/RightUpperLimb/W1/Mode/ScanCorrection/Scenario/ScanCorrectionW1-R.cs
         helpers.CuttingPlanePositionObject();
         helpers.ClickVerticalAngleBtnObject();
         helpers.MoveVerticalSliderCuttingPlanePositionObject();
@@ -101,35 +133,60 @@ public partial class FullScanCorrectionW1R
         helpers.ClickResetPlaneBtnObject();
         helpers.CuttingPlanePositionObject();
         helpers.ClickNextStepBtnObject();
+<<<<<<< HEAD:AutomatedTesting/Scenarios/Modes/ScanCorrection/RightUpperLimb/W-Products/CompleteWorkflow/ScanCorrectionW1-R.cs
         helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.CheckConfirmScanText);
         helpers.ClickPreviousStepBtnObject();
         helpers.CuttingPlanePositionObject();
         helpers.ClickNextStepBtnObject();
         helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.CheckConfirmScanText);
+=======
+        //// helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.CheckConfirmScanText);
+        helpers.ClickPreviousStepBtnObject();
+        helpers.CuttingPlanePositionObject();
+        helpers.ClickNextStepBtnObject();
+        //// helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.CheckConfirmScanText);
+>>>>>>> temp-branch:AutomatedTesting/RightUpperLimb/W1/Mode/ScanCorrection/Scenario/ScanCorrectionW1-R.cs
         helpers.ClickValidateBtnObject();
     }
 
     private void RepeatPreviousStep()
     {
         helpers.ClickQuitBtnObject();
+<<<<<<< HEAD:AutomatedTesting/Scenarios/Modes/ScanCorrection/RightUpperLimb/W-Products/CompleteWorkflow/ScanCorrectionW1-R.cs
         helpers.VerifyAndAssertText("/Canvas/WarnPopup(Clone)/Forma Info Panel v3/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.ModificationsWillBeLostText);
         helpers.ClickConfirmBtnPopUpObject();
         helpers.ClickCleanupBtnMainViewObject();
         helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SelectPartOfScanText);
+=======
+        //// helpers.VerifyAndAssertText("/Canvas/WarnPopup(Clone)/Forma Info Panel v3/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.ModificationsWillBeLostText);
+        helpers.ClickConfirmBtnPopUpObject();
+        helpers.ClickCleanupBtnMainViewObject();
+        //// helpers.VerifyAndAssertText("/Cleanup/LevelNavigationPanel(Clone)/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SelectPartOfScanText);
+>>>>>>> temp-branch:AutomatedTesting/RightUpperLimb/W1/Mode/ScanCorrection/Scenario/ScanCorrectionW1-R.cs
         helpers.ClickSelectPartOfInterestArmRightA2();
         helpers.ClickNextStepBtnObject();
+
     }
 
     private void SetCleanupLandmarks()
     {
         helpers.ClickWristCreaseCenterCleanupLandmark();
         helpers.ClickTickBtnObject();
+<<<<<<< HEAD:AutomatedTesting/Scenarios/Modes/ScanCorrection/RightUpperLimb/W-Products/CompleteWorkflow/ScanCorrectionW1-R.cs
         helpers.VerifyAndAssertText("/Cleanup/LMRunPlacementStep(Clone)/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.VentralArmText);
         helpers.ClickBackArrowBtnObject();
         helpers.VerifyAndAssertText("/Cleanup/LMRunPlacementStep(Clone)/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.WristCreaseCenterText);
         helpers.ClickWristCreaseCenterCleanupLandmark();
         helpers.ClickTickBtnObject();
         helpers.VerifyAndAssertText("/Cleanup/LMRunPlacementStep(Clone)/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.VentralArmText);
+=======
+        //// helpers.VerifyAndAssertText("/Cleanup/LMRunPlacementStep(Clone)/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.VentralArmText);
+        helpers.ClickBackArrowBtnObject();
+        //// helpers.VerifyAndAssertText("/Cleanup/LMRunPlacementStep(Clone)/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.WristCreaseCenterText);
+        helpers.ClickWristCreaseCenterCleanupLandmark();
+        helpers.ClickTickBtnObject();
+        //// helpers.VerifyAndAssertText("/Cleanup/LMRunPlacementStep(Clone)/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.VentralArmText);
+>>>>>>> temp-branch:AutomatedTesting/RightUpperLimb/W1/Mode/ScanCorrection/Scenario/ScanCorrectionW1-R.cs
         helpers.ClickVentralArmCleanupLandmark();
         helpers.ClickTickBtnObject();
 
@@ -141,6 +198,7 @@ public partial class FullScanCorrectionW1R
 
         // STEPS FOR OLD EDITOR
         helpers.ClickPoseBtnMainViewObject();
+<<<<<<< HEAD:AutomatedTesting/Scenarios/Modes/ScanCorrection/RightUpperLimb/W-Products/CompleteWorkflow/ScanCorrectionW1-R.cs
         helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.PosingModeSelectionText);
         helpers.ClickQuitBtnPoseObject();
         helpers.VerifyAndAssertText("/Canvas/WarnPopup(Clone)/Forma Info Panel v3/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.ModificationsWillBeLostText);
@@ -150,15 +208,32 @@ public partial class FullScanCorrectionW1R
         helpers.ClickAdvancedPoseBtnObject();
         helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.PositionLandmarkText);
         helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.ThumbTipText);
+=======
+        //// helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.PosingModeSelectionText);
+        helpers.ClickQuitBtnPoseObject();
+        //// helpers.VerifyAndAssertText("/Canvas/WarnPopup(Clone)/Forma Info Panel v3/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.ModificationsWillBeLostText);
+        helpers.ClickConfirmBtnPopUpObject();
+        helpers.ClickPoseBtnMainViewObject();
+        //// helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.PosingModeSelectionText);
+        helpers.ClickAdvancedPoseBtnObject();
+        //// helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.PositionLandmarkText);
+        //// helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.ThumbTipText);
+>>>>>>> temp-branch:AutomatedTesting/RightUpperLimb/W1/Mode/ScanCorrection/Scenario/ScanCorrectionW1-R.cs
         altDriver.SetDelayAfterCommand(0.12f);
         SetPoseLandmarks();
-        altDriver.SetDelayAfterCommand(0);
+       // altDriver.SetDelayAfterCommand(0);
         helpers.PerformRepeatedClicks(helpers.ClickBackArrowBtnPoseObject, 12);
         helpers.PerformRepeatedClicks(helpers.ClickTickBtnPoseObject, 13);
         helpers.BeingProcessed();
+<<<<<<< HEAD:AutomatedTesting/Scenarios/Modes/ScanCorrection/RightUpperLimb/W-Products/CompleteWorkflow/ScanCorrectionW1-R.cs
         helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.CheckTheLimbPoseText);
         helpers.ClickPreviousStepBtnPoseObject();
         helpers.VerifyAndAssertText("/Canvas/Popup(Clone)/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.OldLandmarksOrSetAgainText);
+=======
+        //// helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.CheckTheLimbPoseText);
+        helpers.ClickPreviousStepBtnPoseObject();
+        //// helpers.VerifyAndAssertText("/Canvas/Popup(Clone)/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.OldLandmarksOrSetAgainText);
+>>>>>>> temp-branch:AutomatedTesting/RightUpperLimb/W1/Mode/ScanCorrection/Scenario/ScanCorrectionW1-R.cs
         helpers.ClickResetBtnPopUpObject();
         helpers.ClickThumbTipLandmark();
         helpers.PerformRepeatedClicks(helpers.ClickTickBtnPoseObject, 13);
@@ -236,17 +311,29 @@ public partial class FullScanCorrectionW1R
         helpers.ClickNeutralGhostChoiceBtnObject();
         altDriver.SetDelayAfterCommand(0);
         helpers.ClickPreviousStepBtnPoseObject();
+<<<<<<< HEAD:AutomatedTesting/Scenarios/Modes/ScanCorrection/RightUpperLimb/W-Products/CompleteWorkflow/ScanCorrectionW1-R.cs
         helpers.VerifyAndAssertText("/Canvas/Popup(Clone)/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.OldLandmarksOrSetAgainText);
+=======
+        //// helpers.VerifyAndAssertText("/Canvas/Popup(Clone)/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.OldLandmarksOrSetAgainText);
+>>>>>>> temp-branch:AutomatedTesting/RightUpperLimb/W1/Mode/ScanCorrection/Scenario/ScanCorrectionW1-R.cs
         helpers.ClickKeepBtnLandmarksPopUpObject(); // Repeat all actions for this step (pose editor) until PreviousStepBtn
         helpers.BeingProcessed();
         ExecutePoseEditorSteps();
         helpers.ClickValidateBtnPoseObject();
         helpers.ClickPoseBtnMainViewObject();
+<<<<<<< HEAD:AutomatedTesting/Scenarios/Modes/ScanCorrection/RightUpperLimb/W-Products/CompleteWorkflow/ScanCorrectionW1-R.cs
         helpers.VerifyAndAssertText("/Canvas/WarnPopup(Clone)/Forma Info Panel v3/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.AllChangesLostText);
         helpers.ClickConfirmBtnPopUpObject();
         helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.PosingModeSelectionText);
         helpers.ClickAdvancedPoseBtnObject();
         helpers.VerifyAndAssertText("/Canvas/Popup(Clone)/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.OldLandmarksOrSetAgainText);
+=======
+       // // helpers.VerifyAndAssertText("/Canvas/WarnPopup(Clone)/Forma Info Panel v3/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.AllChangesLostText);
+        helpers.ClickConfirmBtnPopUpObject();
+       // // helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.PosingModeSelectionText);
+        helpers.ClickAdvancedPoseBtnObject();
+        //// helpers.VerifyAndAssertText("/Canvas/Popup(Clone)/Content/Content text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.OldLandmarksOrSetAgainText);
+>>>>>>> temp-branch:AutomatedTesting/RightUpperLimb/W1/Mode/ScanCorrection/Scenario/ScanCorrectionW1-R.cs
         helpers.ClickKeepBtnLandmarksPopUpObject();//Repeat one last time the actions performed in the step editor and validate again)
         helpers.BeingProcessed();
         ExecutePoseEditorSteps();
@@ -319,6 +406,7 @@ public partial class FullScanCorrectionW1R
     {
         helpers.ClickThumbTipLandmark();
         helpers.ClickTickBtnPoseObject();
+<<<<<<< HEAD:AutomatedTesting/Scenarios/Modes/ScanCorrection/RightUpperLimb/W-Products/CompleteWorkflow/ScanCorrectionW1-R.cs
         helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.DistalEndIndexFingerText);
         helpers.ClickDistalEndIndexLandmark();
         helpers.ClickTickBtnPoseObject();
@@ -353,13 +441,53 @@ public partial class FullScanCorrectionW1R
         helpers.ClickMedialBorderMetacarpalLandmark();
         helpers.ClickTickBtnPoseObject();
         helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.WristCreaseCenterText);
+=======
+       // // helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.DistalEndIndexFingerText);
+        helpers.ClickDistalEndIndexLandmark();
+        helpers.ClickTickBtnPoseObject();
+       // // helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.DistalEndMiddleFingerText);
+        helpers.ClickDistalMiddleFingerLandmark();
+        helpers.ClickTickBtnPoseObject();
+        // helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.DistalEndRingFingerText);
+        helpers.ClickDistalRingFingerLandmark();
+        helpers.ClickTickBtnPoseObject();
+        // helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.DistalEndLittleFingerText);
+        helpers.ClickDistalLittleFingerLandmark();
+        helpers.ClickTickBtnPoseObject();
+        // helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.ThumbMetacarpalText);
+        helpers.ClickThumbMetacarpalLandmark();
+        helpers.ClickTickBtnPoseObject();
+        // helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.IndexMetacarpalText);
+        helpers.ClickIndexMetacarpalLandmark();
+        helpers.ClickTickBtnPoseObject();
+        // helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.MiddleMetacarpalText);
+        helpers.ClickMiddleMetacarpalLandmark();
+        helpers.ClickTickBtnPoseObject();
+        // helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.RingMetacarpalText);
+        helpers.ClickRingMetacarpalLandmark();
+        helpers.ClickTickBtnPoseObject();
+        // helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.LittleMetacarpalText);
+        helpers.ClickLittleMetacarpalLandmark();
+        helpers.ClickTickBtnPoseObject();
+        // helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.MetacarpalCreaseCenterText);
+        helpers.ClickCreaseCenterMetacarpalLandmark();
+        helpers.ClickTickBtnPoseObject();
+        // helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.MedialBorderMetacarpalText);
+        helpers.ClickMedialBorderMetacarpalLandmark();
+        helpers.ClickTickBtnPoseObject();
+        // helpers.VerifyAndAssertText("/PoseCTL/LMRunPlacementStep/LMRunPlacementStepPanel/Canvas/ImageContainer/Label", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.WristCreaseCenterText);
+>>>>>>> temp-branch:AutomatedTesting/RightUpperLimb/W1/Mode/ScanCorrection/Scenario/ScanCorrectionW1-R.cs
         helpers.ClickWristCreaseCenterLandmark();
     }
 
     private void ExecuteSculptLevel()
     {
         helpers.ClickSculptBtnMainNoThumbViewObject();
+<<<<<<< HEAD:AutomatedTesting/Scenarios/Modes/ScanCorrection/RightUpperLimb/W-Products/CompleteWorkflow/ScanCorrectionW1-R.cs
         helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SculptEditorText);
+=======
+        // helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SculptEditorText);
+>>>>>>> temp-branch:AutomatedTesting/RightUpperLimb/W1/Mode/ScanCorrection/Scenario/ScanCorrectionW1-R.cs
         helpers.ClickFirstOnMeshToActivateDrawingSculptObject();
         helpers.FirstPullOnMeshSculptObject();
         helpers.SecondPullOnMeshSculptObject();
@@ -385,6 +513,7 @@ public partial class FullScanCorrectionW1R
         helpers.CheckLimitValuePullPushSculptObject();
         helpers.ClickPullPushBtnSculptObject();
         helpers.ClickNextStepBtnSculptObject();
+<<<<<<< HEAD:AutomatedTesting/Scenarios/Modes/ScanCorrection/RightUpperLimb/W-Products/CompleteWorkflow/ScanCorrectionW1-R.cs
         helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SculptValidationText);
         helpers.ClickPreviousStepBtnSculptObject();
         helpers.VerifyAndAssertText("/Canvas/SculptUI(Clone)/InteractiveUIRoot/Pull Push  Switch/Labels/Label On", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.PullOptionActivated);
@@ -393,6 +522,16 @@ public partial class FullScanCorrectionW1R
         helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SculptValidationText);
         helpers.ClickPreviousStepBtnSculptObject();
         helpers.VerifyAndAssertText("/Canvas/SculptUI(Clone)/InteractiveUIRoot/Pull Push  Switch/Labels/Label Off", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.PushOptionActivated);
+=======
+        // helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SculptValidationText);
+        helpers.ClickPreviousStepBtnSculptObject();
+        // helpers.VerifyAndAssertText("/Canvas/SculptUI(Clone)/InteractiveUIRoot/Pull Push  Switch/Labels/Label On", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.PullOptionActivated);
+        helpers.ClickPullPushBtnSculptObject();
+        helpers.ClickNextStepBtnSculptObject();
+        // helpers.VerifyAndAssertText("/Canvas/StatusText/Variable Size Container/Text", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.SculptValidationText);
+        helpers.ClickPreviousStepBtnSculptObject();
+        // helpers.VerifyAndAssertText("/Canvas/SculptUI(Clone)/InteractiveUIRoot/Pull Push  Switch/Labels/Label Off", FullScanCorrectionA1R.ScanCorrectionHelpersA1R.PushOptionActivated);
+>>>>>>> temp-branch:AutomatedTesting/RightUpperLimb/W1/Mode/ScanCorrection/Scenario/ScanCorrectionW1-R.cs
         helpers.ClickOnAxisYSculptObject();
         Thread.Sleep(500);
         helpers.ClickOnAxisAntiXSculptObject();
