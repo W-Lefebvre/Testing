@@ -68,25 +68,25 @@ public partial class FullScanCorrectionA3R
         }
 
         // SCREEN COORDINATES METHOD //
-        public void ClickSelectPartOfInterestArmRightA2() => Click(996.2365f, 686.395f);
-        public void ClickWristCreaseCenterCleanupLandmark() => Click(843.1122f, 646.7988f);
-        public void ClickVentralArmCleanupLandmark() => Click(1084.338f, 632.4872f);
-        public void ClickThumbTipLandmark() => Click(1038.221f, 850.7391f);
-        public void ClickDistalEndIndexLandmark() => Click(1094.98f, 875.7844f);
-        public void ClickDistalMiddleFingerLandmark() => Click(1137.549f, 829.2717f);
-        public void ClickDistalRingFingerLandmark() => Click(1102.075f, 761.2916f);
-        public void ClickDistalLittleFingerLandmark() => Click(1215.593f, 757.7137f);
-        public void ClickThumbMetacarpalLandmark() => Click(1112.717f, 897.2518f);
-        public void ClickIndexMetacarpalLandmark() => Click(1102.075f, 922.2971f);
-        public void ClickMiddleMetacarpalLandmark() => Click(1087.885f, 915.1413f);
-        public void ClickRingMetacarpalLandmark() => Click(1080.79f, 911.5634f);
-        public void ClickLittleMetacarpalLandmark() => Click(1048.863f, 897.2518f);
-        public void ClickCreaseCenterMetacarpalLandmark() => Click(928.2506f, 861.4728f);
-        public void ClickMedialBorderMetacarpalLandmark() => Click(1070.148f, 807.8043f);
-        public void ClickWristCreaseCenterLandmark() => Click(1077.243f, 818.538f);
-        public void ClickThumbInterPhalangealLandmark() => Click(1066.6f, 1094.036f);
-        public void ClickThumbMetaPhalangealLandmark() => Click(1109.17f, 890.096f);
-        public void ClickFirstInterdigitalLandmark() => Click(903.4186f, 968.8098f);
+        public void ClickSelectPartOfInterestArmRightA2() => Click(936.5451f, 696.8646f);
+        public void ClickWristCreaseCenterCleanupLandmark() => Click(955.5828f, 685.3403f);
+        public void ClickVentralArmCleanupLandmark() => Click(1277.321f, 696.8646f);
+        public void ClickThumbTipLandmark() => Click(1071.713f, 1032.991f);
+        public void ClickDistalEndIndexLandmark() => Click(896.5659f, 871.6506f);
+        public void ClickDistalMiddleFingerLandmark() => Click(883.2394f, 865.8884f);
+        public void ClickDistalRingFingerLandmark() => Click(898.4696f, 846.6812f);
+        public void ClickDistalLittleFingerLandmark() => Click(932.7375f, 823.6324f);
+        public void ClickThumbMetacarpalLandmark() => Click(1102.173f, 881.2542f);
+        public void ClickIndexMetacarpalLandmark() => Click(1204.977f, 883.1749f);
+        public void ClickMiddleMetacarpalLandmark() => Click(1212.592f, 865.8884f);
+        public void ClickRingMetacarpalLandmark() => Click(1218.304f, 840.919f);
+        public void ClickLittleMetacarpalLandmark() => Click(1224.015f, 806.3459f);
+        public void ClickCreaseCenterMetacarpalLandmark() => Click(890.8545f, 829.3947f);
+        public void ClickMedialBorderMetacarpalLandmark() => Click(999.3696f, 862.0469f);
+        public void ClickWristCreaseCenterLandmark() => Click(1064.098f, 794.8216f);
+        public void ClickThumbInterPhalangealLandmark() => Click(1041.253f, 1063.723f);
+        public void ClickThumbMetaPhalangealLandmark() => Click(1079.328f, 908.1443f);
+        public void ClickFirstInterdigitalLandmark() => Click(972.7168f, 998.4184f);
         public void ClickFirstOnMeshToActivateDrawing() => Click(487.4975f, 791.1719f);
 
         public void Click(float x, float y)
@@ -175,8 +175,8 @@ public partial class FullScanCorrectionA3R
         public void CuttingPlanePositionObject()
         {
             var Plane1 = altDriver.WaitForObject(By.PATH, "/Cleanup/CropScanStep(Clone)/MeshCropperTool/Plane1");
-            var startPosition = Plane1.GetScreenPosition();
-            Move(startPosition.x, startPosition.y, 942.4403f, 643.2209f);
+            //var startPosition = Plane1.GetScreenPosition();
+            Move(1157.383f, 739.1206f, 679.5356f, 723.7548f);
         }
 
         public void ClickVerticalAngleBtnObject()
@@ -932,6 +932,12 @@ public partial class FullScanCorrectionA3R
         {
             var ClickOnAxisAntiXSculptObject = altDriver.WaitForObject(By.PATH, "/Canvas/Compass3D/AntiXBar/AntiX");
             ClickOnAxisAntiXSculptObject.Tap();
+        }
+
+        public void ClickOnAxisAntiZSculptObject()
+        {
+            var ClickOnAxisAntiZSculptObject = altDriver.WaitForObject(By.PATH, "/Canvas/Compass3D/AntiZBar/AntiZ");
+            ClickOnAxisAntiZSculptObject.Tap();
         }
 
         public void FirstPushOnMeshSculptObject()

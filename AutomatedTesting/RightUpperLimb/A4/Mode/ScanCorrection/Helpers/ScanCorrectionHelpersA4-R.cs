@@ -68,25 +68,25 @@ public partial class FullScanCorrectionA4R
         }
 
         // SCREEN COORDINATES METHOD //
-        public void ClickSelectPartOfInterestArmRightA2() => Click(967.2723f, 714.7789f);
-        public void ClickWristCreaseCenterCleanupLandmark() => Click(843.1122f, 646.7988f);
-        public void ClickVentralArmCleanupLandmark() => Click(1084.338f, 632.4872f);
-        public void ClickThumbTipLandmark() => Click(1038.221f, 850.7391f);
-        public void ClickDistalEndIndexLandmark() => Click(1094.98f, 875.7844f);
-        public void ClickDistalMiddleFingerLandmark() => Click(1137.549f, 829.2717f);
-        public void ClickDistalRingFingerLandmark() => Click(1102.075f, 761.2916f);
-        public void ClickDistalLittleFingerLandmark() => Click(1215.593f, 757.7137f);
-        public void ClickThumbMetacarpalLandmark() => Click(1112.717f, 897.2518f);
-        public void ClickIndexMetacarpalLandmark() => Click(1102.075f, 922.2971f);
-        public void ClickMiddleMetacarpalLandmark() => Click(1087.885f, 915.1413f);
-        public void ClickRingMetacarpalLandmark() => Click(1080.79f, 911.5634f);
-        public void ClickLittleMetacarpalLandmark() => Click(1048.863f, 897.2518f);
-        public void ClickCreaseCenterMetacarpalLandmark() => Click(928.2506f, 861.4728f);
-        public void ClickMedialBorderMetacarpalLandmark() => Click(1070.148f, 807.8043f);
-        public void ClickWristCreaseCenterLandmark() => Click(1077.243f, 818.538f);
-        public void ClickThumbInterPhalangealLandmark() => Click(1066.6f, 1094.036f);
-        public void ClickThumbMetaPhalangealLandmark() => Click(1109.17f, 890.096f);
-        public void ClickFirstInterdigitalLandmark() => Click(903.4186f, 968.8098f);
+        public void ClickSelectPartOfInterestArmRightA2() => Click(938.4489f, 685.3403f);
+        public void ClickWristCreaseCenterCleanupLandmark() => Click(947.9677f, 691.1025f);
+        public void ClickVentralArmCleanupLandmark() => Click(1218.304f, 710.3097f);
+        public void ClickThumbTipLandmark() => Click(1066.002f, 1004.181f);
+        public void ClickDistalEndIndexLandmark() => Click(896.5659f, 815.9496f);
+        public void ClickDistalMiddleFingerLandmark() => Click(887.047f, 804.4252f);
+        public void ClickDistalRingFingerLandmark() => Click(907.9885f, 781.3765f);
+        public void ClickDistalLittleFingerLandmark() => Click(944.1602f, 767.9315f);
+        public void ClickThumbMetacarpalLandmark() => Click(1104.077f, 873.5713f);
+        public void ClickIndexMetacarpalLandmark() => Click(1195.458f, 852.4434f);
+        public void ClickMiddleMetacarpalLandmark() => Click(1199.266f, 823.6324f);
+        public void ClickRingMetacarpalLandmark() => Click(1204.977f, 810.1874f);
+        public void ClickLittleMetacarpalLandmark() => Click(1203.073f, 787.1387f);
+        public void ClickCreaseCenterMetacarpalLandmark() => Click(906.0847f, 817.8703f);
+        public void ClickMedialBorderMetacarpalLandmark() => Click(1033.637f, 838.9983f);
+        public void ClickWristCreaseCenterLandmark() => Click(1077.424f, 794.8216f);
+        public void ClickThumbInterPhalangealLandmark() => Click(1050.771f, 1054.119f);
+        public void ClickThumbMetaPhalangealLandmark() => Click(1094.558f, 858.2055f);
+        public void ClickFirstInterdigitalLandmark() => Click(970.813f, 977.2904f);
         public void ClickFirstOnMeshToActivateDrawing() => Click(487.4975f, 791.1719f);
 
         public void Click(float x, float y)
@@ -114,6 +114,30 @@ public partial class FullScanCorrectionA4R
             {
                 clickAction();
             }
+        }
+
+        public void ClickOnAxisYSculptObject()
+        {
+            var ClickOnAxisYSculptObject = altDriver.WaitForObject(By.PATH, "/Canvas/Compass3D/AntiYBar/AntiY");
+            ClickOnAxisYSculptObject.Tap();
+        }
+
+        public void ClickOnAxisXSculptObject()
+        {
+            var ClickOnAxisXSculptObject = altDriver.WaitForObject(By.PATH, "/Canvas/Compass3D/XBar/X/XLabel");
+            ClickOnAxisXSculptObject.Tap();
+        }
+
+        public void ClickOnAxisAntiXSculptObject()
+        {
+            var ClickOnAxisAntiXSculptObject = altDriver.WaitForObject(By.PATH, "/Canvas/Compass3D/AntiXBar/AntiX");
+            ClickOnAxisAntiXSculptObject.Tap();
+        }
+
+        public void ClickOnAxisAntiZSculptObject()
+        {
+            var ClickOnAxisAntiZSculptObject = altDriver.WaitForObject(By.PATH, "/Canvas/Compass3D/AntiZBar/AntiZ");
+            ClickOnAxisAntiZSculptObject.Tap();
         }
 
         // CLEANUP LEVEL OBJECT // 
@@ -175,8 +199,8 @@ public partial class FullScanCorrectionA4R
         public void CuttingPlanePositionObject()
         {
             var Plane1 = altDriver.WaitForObject(By.PATH, "/Cleanup/CropScanStep(Clone)/MeshCropperTool/Plane1");
-            var startPosition = Plane1.GetScreenPosition();
-            Move(startPosition.x, startPosition.y, 942.4403f, 643.2209f);
+            //var startPosition = Plane1.GetScreenPosition();
+            Move(1157.383f, 739.1206f, 679.5356f, 723.7548f);
         }
 
         public void ClickVerticalAngleBtnObject()
@@ -189,7 +213,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveVerticalSlider = altDriver.WaitForObject(By.PATH, "/Cleanup/CropScanStep(Clone)/CropScanPanel/Canvas/ExtensibleYSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveVerticalSlider.GetScreenPosition();
-            Move(740.2367f, 335.5216f, 747.3315f, 407.0796f);
+            altDriver.MoveMouse(new AltVector2(740.2367f, 335.5216f), 0.25f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(747.3315f, 407.0796f), 0.5f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickHorizontalAngleBtnObject()
@@ -202,7 +229,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveHorizontalSlider = altDriver.WaitForObject(By.PATH, "/Cleanup/CropScanStep(Clone)/CropScanPanel/Canvas/ExtensibleXSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveHorizontalSlider.GetScreenPosition();
-            Move(992.1044f, 335.5216f, 1006.294f, 174.5161f);
+            altDriver.MoveMouse(new AltVector2(992.1044f, 335.5216f), 0.25f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1006.294f, 174.5161f), 0.5f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickResetPlaneBtnObject()
@@ -289,7 +319,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderHandExtFlex = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/SliderPanel/PoseSlider(Clone)/SlideMask/Background/Slider/Handle Slide Area");
             var startPosition = MoveSliderHandExtFlex.GetScreenPosition();
-            Move(396.1357f, 1158.438f, 257.7858f, 1158.438f);
+            altDriver.MoveMouse(new AltVector2(396.1357f, 1158.438f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(257.7858f, 1158.438f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickHandAdAbBtnObject()
@@ -302,7 +335,11 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderHandAdAbObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/SliderPanel/PoseSlider(Clone)[1]/SlideMask/Background/Slider/Handle Slide Area");
             var startPosition = MoveSliderHandAdAbObject.GetScreenPosition();
-            Move(222.3114f, 1033.212f, 353.5665f, 1033.212f);
+            altDriver.MoveMouse(new AltVector2(222.3114f, 1033.212f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(353.5665f, 1033.212f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
+            
         }
 
         public void ClickThumbExtFlexBtnObject()
@@ -315,7 +352,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderThumbExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/SliderPanel/PoseSlider(Clone)[2]/SlideMask/Background/Slider/Handle Slide Area");
             var startPosition = MoveSliderThumbExtFlexObject.GetScreenPosition();
-            Move(318.0921f, 907.9855f, 381.9459f, 907.9855f);
+            altDriver.MoveMouse(new AltVector2(318.0921f, 907.9855f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(381.9459f, 907.9855f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickThumbAdAbBtnObject()
@@ -328,7 +368,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderThumbAdAbObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/SliderPanel/PoseSlider(Clone)[3]/SlideMask/Background/Slider/Handle Slide Area");
             var startPosition = MoveSliderThumbAdAbObject.GetScreenPosition();
-            Move(310.9973f, 786.3369f, 247.1435f, 779.1812f);
+            altDriver.MoveMouse(new AltVector2(310.9973f, 786.3369f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(247.1435f, 779.1812f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickFingerExtFlexBtnObject()
@@ -341,7 +384,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderFingerExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/SliderPanel/PoseSlider(Clone)[4]/SlideMask/Background/Slider/Handle Slide Area");
             var startPosition = MoveSliderFingerExtFlexObject.GetScreenPosition();
-            Move(325.187f, 661.1104f, 261.3332f, 657.5325f);
+            altDriver.MoveMouse(new AltVector2(325.187f, 661.1104f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(261.3332f, 657.5325f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickFingerSplayBtnObject()
@@ -354,7 +400,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderFingerSplayObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/SliderPanel/PoseSlider(Clone)[5]/SlideMask/Background/Slider/Handle Slide Area");
             var startPosition = MoveSliderFingerSplayObject.GetScreenPosition();
-            Move(144.2679f, 539.4619f, 236.5012f, 539.4619f);
+            altDriver.MoveMouse(new AltVector2(144.2679f, 539.4619f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(236.5012f, 539.4619f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickNeutralPoseBtnObject()
@@ -385,7 +434,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderGlobalRotationForwardObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderGlobalRotationForwardObject.GetScreenPosition();
-            Move(889.2289f, 339.0995f, 892.7763f, 482.2155f);
+            altDriver.MoveMouse(new AltVector2(889.2289f, 339.0995f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(892.7763f, 482.2155f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickGlobalRotationRightPoseBtnObject()
@@ -398,7 +450,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderGlobalRotationRightObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)[1]/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderGlobalRotationRightObject.GetScreenPosition();
-            Move(1137.549f, 356.989f, 1141.097f, 231.7625f);
+            altDriver.MoveMouse(new AltVector2(1137.549f, 356.989f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1141.097f, 231.7625f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickGlobalRotationVerticalPoseBtnObject()
@@ -411,7 +466,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderGlobalRotationVerticalObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)[2]/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderGlobalRotationVerticalObject.GetScreenPosition();
-            Move(1382.322f, 339.0995f, 1389.417f, 428.547f);
+            altDriver.MoveMouse(new AltVector2(1382.322f, 339.0995f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1389.417f, 428.547f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickAppearanceBtnObject()
@@ -448,7 +506,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderFirstSphereThumbExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderFirstSphereThumbExtFlexObject.GetScreenPosition();
-            Move(1328.976f, 343.6817f, 1325.427f, 426.0182f);
+            altDriver.MoveMouse(new AltVector2(1328.976f, 343.6817f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1325.427f, 426.0182f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickSecondSphereThumbExtFlexObject()
@@ -467,7 +528,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderSecondSphereThumbExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderSecondSphereThumbExtFlexObject.GetScreenPosition();
-            Move(1321.878f, 347.2616f, 1328.976f, 408.1189f);
+            altDriver.MoveMouse(new AltVector2(1321.878f, 347.2616f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1328.976f, 408.1189f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickThirdSphereThumbExtFlexObject()
@@ -486,7 +550,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderThirdSphereThumbExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderThirdSphereThumbExtFlexObject.GetScreenPosition();
-            Move(892.4401f, 350.8414f, 888.891f, 297.1437f);
+            altDriver.MoveMouse(new AltVector2(892.4401f, 350.8414f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(888.891f, 297.1437f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickThirdSphereThumbInversEversBtnObject()
@@ -499,7 +566,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderThirdSphereThumbInversEversObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderThirdSphereThumbInversEversObject.GetScreenPosition();
-            Move(1137.326f, 347.2616f, 1123.13f, 422.4383f);
+            altDriver.MoveMouse(new AltVector2(1137.326f, 347.2616f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1123.13f, 422.4383f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickThirdSphereThumbAbductAdductBtnObject()
@@ -512,7 +582,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderThirdSphereThumbAbductAdductObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderThirdSphereThumbAbductAdductObject.GetScreenPosition();
-            Move(1378.663f, 336.522f, 1392.859f, 426.0182f);
+            altDriver.MoveMouse(new AltVector2(1378.663f, 336.522f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1392.859f, 426.0182f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickFirstSphereIndexExtFlexObject()
@@ -531,7 +604,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderFirstSphereIndexExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderFirstSphereIndexExtFlexObject.GetScreenPosition();
-            Move(1325.427f, 375.9003f, 1318.329f, 279.2445f);
+            altDriver.MoveMouse(new AltVector2(1325.427f, 375.9003f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1318.329f, 279.2445f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickSecondSphereIndexExtFlexObject()
@@ -550,7 +626,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderSecondSphereIndexExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderSecondSphereIndexExtFlexObject.GetScreenPosition();
-            Move(1328.976f, 375.9003f, 1325.427f, 443.9174f);
+            altDriver.MoveMouse(new AltVector2(1328.976f, 375.9003f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1325.427f, 443.9174f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickThirdSphereIndexExtFlexObject()
@@ -569,7 +648,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderThirdSphereIndexExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderThirdSphereIndexExtFlexObject.GetScreenPosition();
-            Move(1328.976f, 372.3205f, 1321.878f, 286.4042f);
+            altDriver.MoveMouse(new AltVector2(1328.976f, 372.3205f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1321.878f, 286.4042f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickFirstSphereMiddleExtFlexObject()
@@ -588,7 +670,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderFirstSphereMiddleExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderFirstSphereMiddleExtFlexObject.GetScreenPosition();
-            Move(1325.427f, 375.9003f, 1321.878f, 250.6057f);
+            altDriver.MoveMouse(new AltVector2(1325.427f, 375.9003f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1321.878f, 250.6057f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickSecondSphereMiddleExtFlexObject()
@@ -607,7 +692,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderSecondSphereMiddleExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderSecondSphereMiddleExtFlexObject.GetScreenPosition();
-            Move(1322.016f, 374.8784f, 1332.658f, 278.2752f);
+            altDriver.MoveMouse(new AltVector2(1322.016f, 374.8784f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1332.658f, 278.2752f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickThirdSphereMiddleExtFlexObject()
@@ -626,7 +714,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderThirdSphereMiddleExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderThirdSphereMiddleExtFlexObject.GetScreenPosition();
-            Move(1322.016f, 367.7227f, 1329.111f, 442.8586f);
+            altDriver.MoveMouse(new AltVector2(1322.016f, 367.7227f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1329.111f, 442.8586f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickFirstSphereRingExtFlexObject()
@@ -645,7 +736,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderFirstSphereRingExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderFirstSphereRingExtFlexObject.GetScreenPosition();
-            Move(1322.016f, 371.3006f, 1329.111f, 260.3857f);
+            altDriver.MoveMouse(new AltVector2(1322.016f, 371.3006f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1329.111f, 260.3857f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickSecondSphereRingExtFlexObject()
@@ -664,7 +758,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderSecondSphereRingExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderSecondSphereRingExtFlexObject.GetScreenPosition();
-            Move(1325.563f, 371.3006f, 1325.563f, 274.6973f);
+            altDriver.MoveMouse(new AltVector2(1325.563f, 371.3006f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1325.563f, 274.6973f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickThirdSphereRingExtFlexObject()
@@ -683,7 +780,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderThirdSphereRingExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderThirdSphereRingExtFlexObject.GetScreenPosition();
-            Move(1325.563f, 367.7227f, 1325.563f, 464.326f);
+            altDriver.MoveMouse(new AltVector2(1325.563f, 367.7227f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1325.563f, 464.326f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickFirstSphereLittleExtFlexObject()
@@ -702,7 +802,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderFirstSphereLittleExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderFirstSphereLittleExtFlexObject.GetScreenPosition();
-            Move(1329.111f, 367.7227f, 1318.468f, 249.652f);
+            altDriver.MoveMouse(new AltVector2(1329.111f, 367.7227f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1318.468f, 249.652f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickSecondSphereLittleExtFlexObject()
@@ -721,7 +824,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderSecondSphereLittleExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderSecondSphereLittleExtFlexObject.GetScreenPosition();
-            Move(1322.016f, 367.1447f, 1325.563f, 285.431f);
+            altDriver.MoveMouse(new AltVector2(1322.016f, 367.1447f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1325.563f, 285.431f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickThirdSphereLittleExtFlexObject()
@@ -740,7 +846,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderThirdSphereLittleExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderThirdSphereLittleExtFlexObject.GetScreenPosition();
-            Move(1329.111f, 374.8784f, 1329.111f, 464.326f);
+            altDriver.MoveMouse(new AltVector2(1329.111f, 374.8784f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1329.111f, 464.326f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickHandSphereObject()
@@ -759,7 +868,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderHandSphereExtFlexObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)[1]/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderHandSphereExtFlexObject.GetScreenPosition();
-            Move(1353.943f, 378.4564f, 1364.585f, 278.2752f);
+            altDriver.MoveMouse(new AltVector2(1353.943f, 378.4564f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1364.585f, 278.2752f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickHandSphereAbducAdducBtnObject()
@@ -772,7 +884,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderHandSphereAbducAdducObject = altDriver.WaitForObject(By.PATH, "/Canvas/PosePan(Clone)/Panel/SliderTemplate(Clone)/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderHandSphereAbducAdducObject.GetScreenPosition();
-            Move(1063.053f, 292.5868f, 1080.79f, 378.4564f);
+            altDriver.MoveMouse(new AltVector2(1063.053f, 292.5868f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1080.79f, 378.4564f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
 
@@ -824,14 +939,20 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderCircToMinThumbObject = altDriver.WaitForObject(By.PATH, "/Canvas/ThumbEditorPanel(Clone)/ExtensibleCircumferenceSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area");
             var startPosition = MoveSliderCircToMinThumbObject.GetScreenPosition();
-            Move(1092.88f, 324.5237f, 1092.88f, 193.672f);
+            altDriver.MoveMouse(new AltVector2(1092.88f, 324.5237f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1092.88f, 193.672f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void MoveSliderCircToMaxThumbObject()
         {
             var MoveSliderCircToMaxThumbObject = altDriver.WaitForObject(By.PATH, "/Canvas/ThumbEditorPanel(Clone)/ExtensibleCircumferenceSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area");
             var startPosition = MoveSliderCircToMaxThumbObject.GetScreenPosition();
-            Move(1096.478f, 215.4806f, 1092.88f, 466.2798f);
+            altDriver.MoveMouse(new AltVector2(1096.478f, 215.4806f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1092.88f, 466.2798f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickResetSliderBtnThumbObject()
@@ -900,38 +1021,26 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderBrushDiameterSculptObject = altDriver.WaitForObject(By.PATH, "/Canvas/SculptUI(Clone)/InteractiveUIRoot/BrushSlider/ExtensibleSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area");
             var startPosition = MoveSliderBrushDiameterSculptObject.GetScreenPosition();
-            Move(729.5944f, 213.873f, 718.9521f, 460.748f);
+            altDriver.MoveMouse(new AltVector2(729.5944f, 213.873f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(718.9521f, 460.748f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void MoveSliderBrushDiameterToMinSculptObject()
         {
             var MoveSliderBrushDiameterToMinSculptObject = altDriver.WaitForObject(By.PATH, "/Canvas/SculptUI(Clone)/InteractiveUIRoot/BrushSlider/ExtensibleSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area");
             var startPosition = MoveSliderBrushDiameterToMinSculptObject.GetScreenPosition();
-            Move(1082.085f, 280.9065f, 1078.487f, 211.8458f);
+            altDriver.MoveMouse(new AltVector2(1082.085f, 280.9065f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1078.487f, 211.8458f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickPullPushBtnSculptObject()
         {
             var ClickPullPushBtnSculptObject = altDriver.WaitForObject(By.PATH, "/Canvas/SculptUI(Clone)/InteractiveUIRoot/Pull Push  Switch/Background/Switch button");
             ClickPullPushBtnSculptObject.Tap();
-        }
-
-        public void ClickOnAxisYSculptObject()
-        {
-            var ClickOnAxisYSculptObject = altDriver.WaitForObject(By.PATH, "/Canvas/Compass3D/AntiYBar/AntiY");
-            ClickOnAxisYSculptObject.Tap();
-        }
-
-        public void ClickOnAxisXSculptObject()
-        {
-            var ClickOnAxisXSculptObject = altDriver.WaitForObject(By.PATH, "/Canvas/Compass3D/XBar/X/XLabel");
-            ClickOnAxisXSculptObject.Tap();
-        }
-
-        public void ClickOnAxisAntiXSculptObject()
-        {
-            var ClickOnAxisAntiXSculptObject = altDriver.WaitForObject(By.PATH, "/Canvas/Compass3D/AntiXBar/AntiX");
-            ClickOnAxisAntiXSculptObject.Tap();
         }
 
         public void FirstPushOnMeshSculptObject()
@@ -968,7 +1077,10 @@ public partial class FullScanCorrectionA4R
         {
             var MoveSliderEraserDiameterSculptObject = altDriver.WaitForObject(By.PATH, "/Canvas/SculptUI(Clone)/InteractiveUIRoot/BrushSlider/ExtensibleSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderEraserDiameterSculptObject.GetScreenPosition();
-            Move(1078.836f, 259.8422f, 1082.42f, 357.4334f);
+            altDriver.MoveMouse(new AltVector2(1078.836f, 259.8422f), 0.12f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(1082.42f, 357.4334f), 0.25f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
         public void ClickLimitValueBtnSculptObject()

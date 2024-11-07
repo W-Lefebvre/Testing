@@ -11,7 +11,7 @@ public partial class FullAutoFormaA1R
     [OneTimeSetUp]
     public void OneTimeSetUp()
     {
-        altDriver = new AltDriver(host: "192.168.1.13", port: 13000, appName: "__default__");
+        altDriver = new AltDriver(host: ConnexionConfig.Host, port: ConnexionConfig.Port, appName: ConnexionConfig.AppName);
         helpers = new AutoFormaHelpersA1R(altDriver); // Initialisation avec le driver.
     }
 
@@ -24,15 +24,15 @@ public partial class FullAutoFormaA1R
     [Test]
     public void FullAutoFormaA1RWorkflow()
     {
-        //ExecuteFitLevel();
+        ExecuteFitLevel();
         ExecuteClosingSystemLevel();
-        //ExecuteSerialNumberEngraverLevel();
+        ExecuteSerialNumberEngraverLevel();
 
     }
 
     private void ExecuteFitLevel()
     {
-        altDriver.SetDelayAfterCommand(0.12f);
+        altDriver.SetDelayAfterCommand(0.15f);
         helpers.ClickFitBtnMainViewObject();
         helpers.ClickQuitBtnFitObject();
         helpers.ClickCancelBtnPopUpFitObject();
@@ -50,14 +50,15 @@ public partial class FullAutoFormaA1R
         helpers.BeingProcessed();
         helpers.ClickLenghtBtnFitObject();
         helpers.MoveSliderLengthFitObject();
+        Thread.Sleep(500);
         helpers.MoveSliderLengthTo100FitObject();
         helpers.ClickBoundaryWidthBtnFitObject();
         helpers.MoveSliderBoundaryWidthFitObject();
-        helpers.ClickSelectableAlveoleZoneBtnFitObject();
-        helpers.MoveSliderRadiusFitObject();
+        helpers.ClickPatternRegionSelectorFitObject();
         helpers.MoveSliderWidthFitObject();
         helpers.MoveSliderDensityFitObject();
-        helpers.MoveSliderRadiusTo0FitObject();
+        helpers.ClickPatternPannelCloseBtnFitObject();
+        helpers.ClickPatternsOnOffSwitchBtnFitObject();
         helpers.ClickNextStepBtnFitObject();
         helpers.ClickPreviousStepBtnFitObject();
         helpers.ClickNextStepBtnFitObject();
@@ -71,8 +72,10 @@ public partial class FullAutoFormaA1R
         helpers.MoveSliderBoundaryFlareFitObject();
         helpers.ClickNextStepBtnFitObject();
         helpers.ClickOkInformationPopUpBtnFitObject();
+        helpers.ClickPreviousStepBtnFitObject();
+        helpers.ClickNextStepBtnFitObject();
+        helpers.ClickOkInformationPopUpBtnFitObject();
         helpers.ClickValidateBtnFitObject();
-
     }
 
     private void SetFitLandmarks()
@@ -108,15 +111,15 @@ public partial class FullAutoFormaA1R
 
     private void ExecuteClosingSystemLevel()
     {
-        altDriver.SetDelayAfterCommand(0.20f);
+        altDriver.SetDelayAfterCommand(0.15f);
         helpers.ClickClosingSystemsBtnMainViewObject();
         helpers.ClickQuitBtnClosingObject();
         helpers.ClickCancelExitLevelBtnRailObject();
         helpers.ClickQuitBtnClosingObject();
         helpers.ClickConfirmExitLevelBtnRailObject();
         helpers.ClickClosingSystemsBtnMainViewObject();
-        helpers.ClickRotateScanAntiYClosingObject();
-        helpers.ClickRotateScanXClosingObject();
+        helpers.ClickOnAxisAntiZObject();
+        helpers.ClickOnAxisXObject();
         helpers.ClickShowMenuClosingSystemBtnClosingObject();
         helpers.ClickRivetHoleClosingSystemBtnClosingObject();
         helpers.ClickBackArrowBtnClosingObject();
@@ -139,7 +142,8 @@ public partial class FullAutoFormaA1R
         helpers.ClickSelectAllRivetHoleClosingObject();
         helpers.ClickOnDiameterRivetHoleClosingObject();
         helpers.MoveSliderDiameterRivetHoleClosingObject();
-        helpers.ClickShowMenuClosingSystemBtnClosingObject();
+
+       /*helpers.ClickShowMenuClosingSystemBtnClosingObject();
         helpers.ClickMushroomPinClosingSystemBtnClosingObject();
         helpers.ClickBackArrowBtnClosingObject();
         helpers.ClickShowMenuClosingSystemBtnClosingObject();
@@ -155,14 +159,15 @@ public partial class FullAutoFormaA1R
         helpers.ClickTickBtnClosingObject();
 
         /// ISSUE WHEN SELECTING THE MUSHROOM PIN - CONSIDERED AS A MESH.
-       /* helpers.ClickOnPlacedMushroomPinClosingObject();
+        helpers.ClickOnPlacedMushroomPinClosingObject();
         helpers.ClickOnScaleMushroomPinClosingObject();
         helpers.MoveSliderScaleMushroomPinClosingObject();
         helpers.ClickOnSecondPlacedMushroomPinClosingObject();
         helpers.ClickSelectAllMushroomPinClosingObject();
         helpers.ClickOnScaleMushroomPinClosingObject();
-        helpers.MoveSliderScaleMushroomPinClosingObject(); */ 
+        helpers.MoveSliderScaleMushroomPinClosingObject();  
 
+*/
         helpers.ClickShowMenuClosingSystemBtnClosingObject();
         helpers.ClickFreeBeltLoopClosingSystemBtnClosingObject();
         helpers.ClickBackArrowBtnClosingObject();
@@ -210,9 +215,7 @@ public partial class FullAutoFormaA1R
         helpers.ClickSlottedHoleClosingSystemBtnClosingObject();
         helpers.ClickOnSplintToAddSlottedHole2Closing();
         helpers.ClickTickBtnClosingObject();
-
-        /// ISSUE WHEN SELECTING THE SLOTTED HOLE - CONSIDERED AS A MESH.
-        /*helpers.ClickOnPlacedSlottedHoleClosingObject();
+        helpers.ClickOnPlacedSlottedHoleClosingObject();
         helpers.ClickOnLengthSlottedHoleClosingObject();
         helpers.ClickOnLength35mmSlottedHoleClosingObject();
         helpers.ClickOnLengthSlottedHoleClosingObject();
@@ -222,62 +225,33 @@ public partial class FullAutoFormaA1R
         helpers.ClickOnLengthSlottedHoleClosingObject();
         helpers.ClickOnLength35mmSlottedHoleClosingObject();
         helpers.ClickOnLengthSlottedHoleClosingObject();
-        helpers.ClickOnLength15mmSlottedHoleClosingObject(); */
-        
-        altDriver.SetDelayAfterCommand(1);
+        helpers.ClickOnLength15mmSlottedHoleClosingObject(); 
         helpers.ClickShowMenuClosingSystemBtnClosingObject();
         helpers.ClickAddRailBeltClosingObject();
         helpers.ClickRotateScanAntiYClosingObject();
-
-        helpers.CorrectRailBeltLoopPosition();
         helpers.ClickBelt0RailObject();
-        helpers.ClickBeltLengthRailObject();
+        helpers.CorrectRailBeltLoopPosition();
         helpers.MoveSliderBeltLengthRailObject();
+        helpers.MoveSliderBeltLengthBackToDefaultRailObject();
         helpers.ClickBeltClearanceRailObject();
         helpers.MoveSliderBeltClearanceRailObject();
         helpers.ClickBeltWidthRailObject();
         helpers.MoveSliderBeltWidthRailObject();
         helpers.ClickBeltThicknessRailObject();
         helpers.MoveSliderBelThicknessRailObject();
-        helpers.ClickBeltTrashRailObject();
-        helpers.ClickRotateScanXClosingObject();
-        helpers.ClickRotateScanAntiYClosingObject();
         helpers.ClickNextStepBtnClosingObject();
         helpers.ClickPreviousStepBtnClosingObject();
         helpers.ClickNextStepBtnClosingObject();
-        helpers.ClickValidateBtnClosingObject();
-
-
-
-        /*
-        helpers.ClickAddRailBeltClosingObject();
-        helpers.ClickBelt0RailObject();
-        helpers.ClickBeltLengthRailObject();
-        helpers.MoveSliderBeltLengthRailObject();
-        helpers.ClickBeltClearanceRailObject();
-        helpers.MoveSliderBeltClearanceRailObject();
-        helpers.ClickBeltWidthRailObject();
-        helpers.MoveSliderBeltWidthRailObject();
-        helpers.ClickBeltThicknessRailObject();
-        helpers.MoveSliderBelThicknessRailObject();
-        helpers.ClickBeltTrashRailObject();
-        helpers.ClickRotateScanXClosingObject();
-        helpers.ClickRotateScanAntiYClosingObject();
-        helpers.CorrectRailBeltLoopPosition();
-        helpers.ClickNextStepBtnClosingObject();
-        helpers.ClickPreviousStepBtnClosingObject();
-        helpers.ClickNextStepBtnClosingObject();
-        helpers.ClickValidateBtnClosingObject();*/
+        helpers.ClickValidateBtnClosingObject(); 
 
     }
 
     private void ExecuteSerialNumberEngraverLevel()
     {
         helpers.ClickSerialNumberBtnMainViewObject();
-        helpers.ClickRotateScanAntiYClosingObject();
-        helpers.ClickRotateScanXClosingObject();
         helpers.ClickOnSplintToAddSerialNumber();
         helpers.ClickOnSplintToAddSerialNumber();
-        helpers.ClickNextStepBtnPopUpSerialNumberObject();
+        helpers.ClickNextStepBtnSerialNumberObject();
+        helpers.ClickValidateBtnSerialNumberObject();
     }
 }

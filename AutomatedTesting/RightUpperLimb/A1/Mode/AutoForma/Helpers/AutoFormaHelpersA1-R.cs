@@ -68,32 +68,32 @@ public partial class FullAutoFormaA1R
         }
 
         // SCREEN COORDINATES METHOD //
-        public void ClickThumbTipLandmark() => Click(1067.905f, 858.2055f);
-        public void ClickDistalEndIndexLandmark() => Click(1125.019f, 871.6506f);
-        public void ClickDistalMiddleFingerLandmark() => Click(1155.479f, 833.2361f);
-        public void ClickDistalRingFingerLandmark() => Click(1121.211f, 792.9009f);
-        public void ClickDistalLittleFingerLandmark() => Click(1214.496f, 769.8522f);
-        public void ClickThumbMetacarpalLandmark() => Click(1111.692f, 863.9677f);
-        public void ClickIndexMetacarpalLandmark() => Click(1092.655f, 915.8273f);
-        public void ClickMiddleMetacarpalLandmark() => Click(1090.751f, 902.3822f);
-        public void ClickRingMetacarpalLandmark() => Click(1085.039f, 900.4614f);
-        public void ClickLittleMetacarpalLandmark() => Click(1079.328f, 881.2542f);
-        public void ClickCreaseCenterMetacarpalLandmark() => Click(932.7375f, 863.9677f);
-        public void ClickMedialBorderMetacarpalLandmark() => Click(1096.462f, 802.5045f);
-        public void ClickWristCreaseCenterLandmark() => Click(1056.483f, 800.5838f);
+        public void ClickThumbTipLandmark() => Click(1121.211f, 1048.357f);
+        public void ClickDistalEndIndexLandmark() => Click(957.4866f, 881.2542f);
+        public void ClickDistalMiddleFingerLandmark() => Click(944.1602f, 854.3641f);
+        public void ClickDistalRingFingerLandmark() => Click(957.4866f, 840.919f);
+        public void ClickDistalLittleFingerLandmark() => Click(980.3318f, 810.1874f);
+        public void ClickThumbMetacarpalLandmark() => Click(1132.634f, 825.5532f);
+        public void ClickIndexMetacarpalLandmark() => Click(1123.115f, 887.0164f);
+        public void ClickMiddleMetacarpalLandmark() => Click(1130.73f, 865.8884f);
+        public void ClickRingMetacarpalLandmark() => Click(1130.73f, 844.7604f);
+        public void ClickLittleMetacarpalLandmark() => Click(1130.73f, 817.8703f);
+        public void ClickCreaseCenterMetacarpalLandmark() => Click(984.1394f, 812.1081f);
+        public void ClickMedialBorderMetacarpalLandmark() => Click(1067.905f, 821.7117f);
+        public void ClickWristCreaseCenterLandmark() => Click(1079.328f, 800.5838f);
         /*  public void ClickThumbInterPhalangealLandmark() => Click(1066.6f, 1094.036f);
           public void ClickThumbMetaPhalangealLandmark() => Click(1109.17f, 890.096f);
           public void ClickFirstInterdigitalLandmark() => Click(903.4186f, 968.8098f);
           public void ClickFirstOnMeshToActivateDrawing() => Click(487.4975f, 791.1719f); */
-        public void ClickOnSplintToAddRivetHole1Closing() => Click(452.9865f, 1009.943f);
-        public void ClickOnSplintToAddRivetHole2Closing() => Click(481.5432f, 652.688f);
+        public void ClickOnSplintToAddRivetHole1Closing() => Click(1547.656f, 773.6936f);
+        public void ClickOnSplintToAddRivetHole2Closing() => Click(1557.175f, 671.8952f);
         public void ClickOnSplintToAddMushroomPin1Closing() => Click(1155.479f, 986.894f);
         public void ClickOnSplintToAddMushroomPin2Closing() => Click(1123.115f, 702.6268f);
-        public void ClickOnSplintToAddFreeBeltloop1Closing() => Click(584.3469f, 933.1138f);
-        public void ClickOnSplintToAddFreeBeltloop2Closing() => Click(578.6356f, 729.517f);
-        public void ClickOnSplintToAddSlottedHole1Closing() => Click(1001.273f, 911.9858f);
-        public void ClickOnSplintToAddSlottedHole2Closing() => Click(919.4111f, 767.9315f);
-        public void ClickOnSplintToAddSerialNumber() => Click(679.9304f, 800.6485f);
+        public void ClickOnSplintToAddFreeBeltloop1Closing() => Click(1086.943f, 748.7242f);
+        public void ClickOnSplintToAddFreeBeltloop2Closing() => Click(1104.077f, 633.4807f);
+        public void ClickOnSplintToAddSlottedHole1Closing() => Click(1300.166f, 704.5475f);
+        public void ClickOnSplintToAddSlottedHole2Closing() => Click(1439.141f, 683.4196f);
+        public void ClickOnSplintToAddSerialNumber() => Click(1056.483f, 698.7853f);
 
         public void Click(float x, float y)
         {
@@ -120,6 +120,26 @@ public partial class FullAutoFormaA1R
             {
                 clickAction();
             }
+        }
+
+        // AXIS BUTTON 
+
+        public void ClickOnAxisAntiZObject()
+        {
+            var ClickOnAxisAntiZObject = altDriver.WaitForObject(By.PATH, "/Canvas/Compass3D/AntiZBar/AntiZ");
+            ClickOnAxisAntiZObject.Tap();
+        }
+
+        public void ClickOnAxisZObject()
+        {
+            var ClickOnAxisZObject = altDriver.WaitForObject(By.PATH, "/Canvas/Compass3D/ZBar/Z/ZLabel");
+            ClickOnAxisZObject.Tap();
+        }
+
+        public void ClickOnAxisXObject()
+        {
+            var ClickOnAxisXObject = altDriver.WaitForObject(By.PATH, "/Canvas/Compass3D/XBar/X/XLabel");
+            ClickOnAxisXObject.Tap();
         }
 
         // FIT LEVEL 
@@ -181,10 +201,10 @@ public partial class FullAutoFormaA1R
         public void MoveSliderLengthFitObject()
         {
             var MoveSliderLengthFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitEditorStep(Clone)/FitEditorPanel/Canvas/NonGenerativePatternPan/LevelBottomMenu/Lines/Line2/ShiftLengthSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
-            var startPosition = MoveSliderLengthFitObject.GetScreenPosition();
-            altDriver.MoveMouse(new AltVector2(748.0715f, 426.0425f), 0.25f);
+            MoveSliderLengthFitObject.GetScreenPosition();
+            altDriver.MoveMouse(new AltVector2(603.3847f, 429.8839f), 0.25f);
             altDriver.KeyDown(AltKeyCode.Mouse0, 1);
-            altDriver.MoveMouse(new AltVector2(749.9753f, 251.2565f), 0.5f);
+            altDriver.MoveMouse(new AltVector2(599.5771f, 257.0187f), 0.5f);
             altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
@@ -192,9 +212,9 @@ public partial class FullAutoFormaA1R
         {
             var MoveSliderLengthFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitEditorStep(Clone)/FitEditorPanel/Canvas/NonGenerativePatternPan/LevelBottomMenu/Lines/Line2/ShiftLengthSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderLengthFitObject.GetScreenPosition();
-            altDriver.MoveMouse(new AltVector2(749.9753f, 249.3358f), 0.25f);
+            altDriver.MoveMouse(new AltVector2(609.096f, 268.5431f), 0.25f);
             altDriver.KeyDown(AltKeyCode.Mouse0, 1);
-            altDriver.MoveMouse(new AltVector2(749.9753f, 433.7254f), 0.5f);
+            altDriver.MoveMouse(new AltVector2(607.1922f, 437.5668f), 0.5f);
             altDriver.KeyUp(AltKeyCode.Mouse0);
         }
 
@@ -208,45 +228,25 @@ public partial class FullAutoFormaA1R
         {
             var MoveSliderLengthFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitEditorStep(Clone)/FitEditorPanel/Canvas/NonGenerativePatternPan/LevelBottomMenu/Lines/Line2/BoundaryWidthSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderLengthFitObject.GetScreenPosition();
-            altDriver.MoveMouse(new AltVector2(1027.579f, 306.8984f), 0.25f);
+            altDriver.MoveMouse(new AltVector2(890.047f, 299.2747f), 0.25f);
             altDriver.KeyDown(AltKeyCode.Mouse0, 1);
-            altDriver.MoveMouse(new AltVector2(1020.484f, 410.6575f), 0.5f);
+            altDriver.MoveMouse(new AltVector2(890.8545f, 424.1218f), 0.5f);
             altDriver.KeyUp(AltKeyCode.Mouse0);            
         }
 
-        public void ClickSelectableAlveoleZoneBtnFitObject()
+        public void ClickPatternRegionSelectorFitObject()
         {
-            var ClickSelectableAlveoleZoneBtnFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitEditorStep(Clone)/TemplateItems/SelectableAlveoleZone");
-            ClickSelectableAlveoleZoneBtnFitObject.Tap();
-        }
-
-        public void MoveSliderRadiusFitObject()
-        {
-            var MoveSliderRadiusFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitEditorStep(Clone)/FitEditorPanel/Canvas/GenerativePatternPan/Sliders/Radius Slider/Handle Slide Area/Handle");
-            var startPosition = MoveSliderRadiusFitObject.GetScreenPosition();
-            altDriver.MoveMouse(new AltVector2(573.5073f, 181.6719f), 0.25f);
-            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
-            altDriver.MoveMouse(new AltVector2(672.8354f, 181.6719f), 0.5f);
-            altDriver.KeyUp(AltKeyCode.Mouse0);  
-        }
-
-        public void MoveSliderRadiusTo0FitObject()
-        {
-            var MoveSliderRadiusTo0FitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitEditorStep(Clone)/FitEditorPanel/Canvas/GenerativePatternPan/Sliders/Radius Slider/Handle Slide Area/Handle");
-            var startPosition = MoveSliderRadiusTo0FitObject.GetScreenPosition();
-            altDriver.MoveMouse(new AltVector2(763.3017f, 182.1105f), 0.25f);
-            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
-            altDriver.MoveMouse(new AltVector2(565.3092f, 178.269f), 0.5f);
-            altDriver.KeyUp(AltKeyCode.Mouse0);  
+            var ClickPatternRegionSelectorFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitEditorStep(Clone)/TemplateItems/PatternRegionSelector");
+            ClickPatternRegionSelectorFitObject.Tap();
         }
 
         public void MoveSliderWidthFitObject()
         {
             var MoveSliderWidthFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitEditorStep(Clone)/FitEditorPanel/Canvas/GenerativePatternPan/Sliders/Width Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderWidthFitObject.GetScreenPosition();
-            altDriver.MoveMouse(new AltVector2(612.9774f, 72.94879f), 0.25f);
+            altDriver.MoveMouse(new AltVector2(569.1168f, 86.07423f), 0.25f);
             altDriver.KeyDown(AltKeyCode.Mouse0, 1);
-            altDriver.MoveMouse(new AltVector2(761.003f, 63.90094f), 0.5f);
+            altDriver.MoveMouse(new AltVector2(759.4941f, 95.67785f), 0.5f);
             altDriver.KeyUp(AltKeyCode.Mouse0);  
         }
 
@@ -254,10 +254,22 @@ public partial class FullAutoFormaA1R
         {
             var MoveSliderDensityFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitEditorStep(Clone)/FitEditorPanel/Canvas/GenerativePatternPan/Sliders/Density Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderDensityFitObject.GetScreenPosition();
-            altDriver.MoveMouse(new AltVector2(110.882f, 176.9991f), 0.25f);
+            altDriver.MoveMouse(new AltVector2(1098.366f, 84.1535f), 0.25f);
             altDriver.KeyDown(AltKeyCode.Mouse0, 1);
-            altDriver.MoveMouse(new AltVector2(1182.652f, 176.991f), 0.5f);
+            altDriver.MoveMouse(new AltVector2(959.3904f, 78.39133f), 0.5f);
             altDriver.KeyUp(AltKeyCode.Mouse0);  
+        }
+
+        public void ClickPatternPannelCloseBtnFitObject()
+        {
+            var ClickPatternPannelCloseBtnFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitEditorStep(Clone)/FitEditorPanel/Canvas/GenerativePatternPan/Close Btn");
+            ClickPatternPannelCloseBtnFitObject.Tap();
+        }
+
+        public void ClickPatternsOnOffSwitchBtnFitObject()
+        {
+            var ClickPatternsOnOffSwitchBtnFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitEditorStep(Clone)/FitEditorPanel/Canvas/NonGenerativePatternPan/LevelBottomMenu/Lines/Line2/PatternOnOffSwitch/Background/Switch button");
+            ClickPatternsOnOffSwitchBtnFitObject.Tap();
         }
 
         public void ClickGlobalThicknessBtnFitObject()
@@ -270,9 +282,9 @@ public partial class FullAutoFormaA1R
         {
             var MoveSliderGlobalThicknessFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitThicknessStep(Clone)/FitThicknessPanel/Canvas/Grid/GlobalThicknessSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderGlobalThicknessFitObject.GetScreenPosition();
-            altDriver.MoveMouse(new AltVector2(469.4373f, 176.9991f), 0.25f);
+            altDriver.MoveMouse(new AltVector2(473.9281f, 189.7934f), 0.25f);
             altDriver.KeyDown(AltKeyCode.Mouse0, 1);
-            altDriver.MoveMouse(new AltVector2(460.4661f, 272.0015f), 0.5f);
+            altDriver.MoveMouse(new AltVector2(470.1205f, 341.5306f), 0.5f);
             altDriver.KeyUp(AltKeyCode.Mouse0);  
         }
 
@@ -286,9 +298,9 @@ public partial class FullAutoFormaA1R
         {
             var MoveSliderGlobalOffsetFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitThicknessStep(Clone)/FitThicknessPanel/Canvas/Grid/OffsetSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderGlobalOffsetFitObject.GetScreenPosition();
-            altDriver.MoveMouse(new AltVector2(725.118f, 213.1905f), 0.25f);
+            altDriver.MoveMouse(new AltVector2(730.9375f, 218.6042f), 0.25f);
             altDriver.KeyDown(AltKeyCode.Mouse0, 1);
-            altDriver.MoveMouse(new AltVector2(729.6036f, 312.7169f), 0.5f);
+            altDriver.MoveMouse(new AltVector2(736.6489f, 368.4207f), 0.5f);
             altDriver.KeyUp(AltKeyCode.Mouse0);  
         }
 
@@ -302,9 +314,9 @@ public partial class FullAutoFormaA1R
         {
             var MoveSliderBoundaryThicknessFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitThicknessStep(Clone)/FitThicknessPanel/Canvas/Grid/Boundary/BoundaryThicknessSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderBoundaryThicknessFitObject.GetScreenPosition();
-            altDriver.MoveMouse(new AltVector2(994.2254f, 154.3795f), 0.25f);
+            altDriver.MoveMouse(new AltVector2(997.4658f, 164.8239f), 0.25f);
             altDriver.KeyDown(AltKeyCode.Mouse0, 1);
-            altDriver.MoveMouse(new AltVector2(998.7411f, 244.858f), 0.5f);
+            altDriver.MoveMouse(new AltVector2(993.6583f, 360.7379f), 0.5f);
             altDriver.KeyUp(AltKeyCode.Mouse0);  
         }
 
@@ -318,9 +330,9 @@ public partial class FullAutoFormaA1R
         {
             var MoveSliderBoundaryFlareFitObject = altDriver.WaitForObject(By.PATH, "/Fit/FitThicknessStep(Clone)/FitThicknessPanel/Canvas/Grid/Boundary/FlareSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderBoundaryFlareFitObject.GetScreenPosition();
-            altDriver.MoveMouse(new AltVector2(1272.364f, 163.4273f), 0.25f);
+            altDriver.MoveMouse(new AltVector2(1269.705f, 162.9032f), 0.25f);
             altDriver.KeyDown(AltKeyCode.Mouse0, 1);
-            altDriver.MoveMouse(new AltVector2(1272.364f, 272.0015f), 0.5f);
+            altDriver.MoveMouse(new AltVector2(1263.994f, 358.8171f), 0.5f);
             altDriver.KeyUp(AltKeyCode.Mouse0);  
         }
 
@@ -348,7 +360,7 @@ public partial class FullAutoFormaA1R
 
         public void ClickBelt0RailObject()
         {
-            var ClickBelt0RailObject = altDriver.WaitForObject(By.PATH, "/ClosingSystems/ClosingSystemsEditorStep(Clone)/ClosingSystemsEditors/BeltLoopsEditors/RailBeltLoopsEditor/RailBeltLoop(Clone)/PreviewMesh");
+            var ClickBelt0RailObject = altDriver.WaitForObject(By.PATH, "/ClosingSystems/ClosingSystemsEditorStep(Clone)/ClosingSystemsEditors/BeltLoopsEditors/RailBeltLoopsEditor/RailBeltLoop(Clone)[2]");
             ClickBelt0RailObject.Tap();
         }
 
@@ -392,7 +404,20 @@ public partial class FullAutoFormaA1R
         {
             var MoveSliderBeltLengthRailObject = altDriver.WaitForObject(By.PATH, "/ClosingSystems/ClosingSystemsEditorStep(Clone)/Canvas/BottomMenu/BeltLoopsEditorsPanel/LengthSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderBeltLengthRailObject.GetScreenPosition();
-            Move(361.7824f, 213.1905f, 361.7824f, 244.858f);
+            altDriver.MoveMouse(new AltVector2(472.0243f, 237.8115f), 0.25f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(472.0243f, 387.628f), 0.5f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);  
+        }
+
+        public void MoveSliderBeltLengthBackToDefaultRailObject()
+        {
+            var MoveSliderBeltLengthBackToDefaultRailObject = altDriver.WaitForObject(By.PATH, "/ClosingSystems/ClosingSystemsEditorStep(Clone)/Canvas/BottomMenu/BeltLoopsEditorsPanel/LengthSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
+            var startPosition = MoveSliderBeltLengthBackToDefaultRailObject.GetScreenPosition();
+            altDriver.MoveMouse(new AltVector2(472.0243f, 381.8658f), 0.25f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(472.0243f, 226.2871f), 0.5f);
+            altDriver.KeyUp(AltKeyCode.Mouse0);  
         }
 
         public void ClickBeltClearanceRailObject()
@@ -405,7 +430,10 @@ public partial class FullAutoFormaA1R
         {
             var MoveSliderBeltClearanceRailObject = altDriver.WaitForObject(By.PATH, "/ClosingSystems/ClosingSystemsEditorStep(Clone)/Canvas/BottomMenu/BeltLoopsEditorsPanel/ClearanceSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderBeltClearanceRailObject.GetScreenPosition();
-            Move(626.4342f, 249.3819f, 626.4342f, 321.7647f);
+            altDriver.MoveMouse(new AltVector2(730.9375f, 422.201f), 0.25f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(732.8413f, 548.9689f), 0.5f);
+            altDriver.KeyUp(AltKeyCode.Mouse0); 
         }
 
         public void ClickBeltWidthRailObject()
@@ -418,7 +446,10 @@ public partial class FullAutoFormaA1R
         {
             var MoveSliderBeltWidthRailObject = altDriver.WaitForObject(By.PATH, "/ClosingSystems/ClosingSystemsEditorStep(Clone)/Canvas/BottomMenu/BeltLoopsEditorsPanel/WidthSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderBeltWidthRailObject.GetScreenPosition();
-            Move(895.5717f, 258.4297f, 895.5717f, 339.8604f);
+            altDriver.MoveMouse(new AltVector2(730.9375f, 418.3596f), 0.25f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(732.8413f, 235.8907f), 0.5f);
+            altDriver.KeyUp(AltKeyCode.Mouse0); 
         }
 
         public void ClickBeltThicknessRailObject()
@@ -431,7 +462,10 @@ public partial class FullAutoFormaA1R
         {
             var MoveSliderBelThicknessRailObject = altDriver.WaitForObject(By.PATH, "/ClosingSystems/ClosingSystemsEditorStep(Clone)/Canvas/BottomMenu/BeltLoopsEditorsPanel/ThicknessSlider/ButtonAndSlidingPanel/Sliding Panel /Mask/Content/Slider/Handle Slide Area/Handle");
             var startPosition = MoveSliderBelThicknessRailObject.GetScreenPosition();
-            Move(1169.195f, 163.4273f, 1164.709f, 231.2862f);
+            altDriver.MoveMouse(new AltVector2(470.1205f, 449.0912f), 0.25f);
+            altDriver.KeyDown(AltKeyCode.Mouse0, 1);
+            altDriver.MoveMouse(new AltVector2(475.8318f, 358.8171f), 0.5f);
+            altDriver.KeyUp(AltKeyCode.Mouse0); 
         }
 
         public void ClickBeltTrashRailObject()
@@ -644,13 +678,13 @@ public partial class FullAutoFormaA1R
 
         public void ClickOnPlacedSlottedHoleClosingObject()
         {
-            var ClickOnPlacedSlottedHoleClosingObject = altDriver.WaitForObject(By.PATH, "/ClosingSystems/ClosingSystemsEditorStep(Clone)/ClosingSystemsEditors/SlottedHolesEditor/SlottedHole(Clone)/PreviewMesh");
+            var ClickOnPlacedSlottedHoleClosingObject = altDriver.WaitForObject(By.PATH, "/ClosingSystems/ClosingSystemsEditorStep(Clone)/ClosingSystemsEditors/SlottedHolesEditor/SlottedHole(Clone)");
             ClickOnPlacedSlottedHoleClosingObject.Click();
         }
 
         public void ClickOnSecondPlacedSlottedHoleClosingObject()
         {
-            var ClickOnSecondPlacedMushroomPinClosingObject = altDriver.WaitForObject(By.PATH, "/ClosingSystems/ClosingSystemsEditorStep(Clone)/ClosingSystemsEditors/SlottedHolesEditor/SlottedHole(Clone)[1]/PreviewMesh");
+            var ClickOnSecondPlacedMushroomPinClosingObject = altDriver.WaitForObject(By.PATH, "/ClosingSystems/ClosingSystemsEditorStep(Clone)/ClosingSystemsEditors/SlottedHolesEditor/SlottedHole(Clone)[1]");
             ClickOnSecondPlacedMushroomPinClosingObject.Tap();
         }
 
@@ -786,11 +820,11 @@ public partial class FullAutoFormaA1R
 
         public void CorrectRailBeltLoopPosition()
         {
-            var CorrectRailBeltLoopPosition = altDriver.WaitForObject(By.PATH, "/ClosingSystems/ClosingSystemsEditorStep(Clone)/ClosingSystemsEditors/BeltLoopsEditors/RailBeltLoopsEditor/RailBeltLoop(Clone)[2]/PreviewMesh");
+            var CorrectRailBeltLoopPosition = altDriver.WaitForObject(By.PATH, "/ClosingSystems/ClosingSystemsEditorStep(Clone)/ClosingSystemsEditors/BeltLoopsEditors/RailBeltLoopsEditor/RailBeltLoop(Clone)[2]");
             CorrectRailBeltLoopPosition.Tap();
-            altDriver.MoveMouse(new AltVector2(1092.655f, 946.5588f), 0.25f);
+            altDriver.MoveMouse(new AltVector2(1012.696f, 787.1387f), 0.25f);
             altDriver.KeyDown(AltKeyCode.Mouse0, 1);
-            altDriver.MoveMouse(new AltVector2(980.3318f, 823.6324f), 0.5f);
+            altDriver.MoveMouse(new AltVector2(963.1979f, 783.2972f), 0.5f);
             altDriver.KeyUp(AltKeyCode.Mouse0); 
         }
 
@@ -798,7 +832,7 @@ public partial class FullAutoFormaA1R
 
         public void ClickSerialNumberBtnMainViewObject()
         {
-            var ClickSerialNumberBtnMainViewObject = altDriver.WaitForObject(By.PATH, "/Canvas/MainMenu(Clone)/MainMenuBtn(Clone)[3]");
+            var ClickSerialNumberBtnMainViewObject = altDriver.WaitForObject(By.PATH, "/Canvas/MainMenu(Clone)/MainMenuBtn(Clone)[2]");
             ClickSerialNumberBtnMainViewObject.Tap();
         }
 
@@ -820,12 +854,17 @@ public partial class FullAutoFormaA1R
             ClickConfirmBtnPopUpSerialNumberObject.Tap();
         }
 
-        public void ClickNextStepBtnPopUpSerialNumberObject()
+        public void ClickNextStepBtnSerialNumberObject()
         {
-            var ClickNextStepBtnPopUpSerialNumberObject = altDriver.WaitForObject(By.PATH, "/Canvas/Navigation Buttons Panel/NavNext Step/Forma Button v3 Contextual");
-            ClickNextStepBtnPopUpSerialNumberObject.Tap();
+            var ClickNextStepBtnSerialNumberObject = altDriver.WaitForObject(By.PATH, "/TextEngrave/LevelNavigationPanel(Clone)/Canvas/NavNext Step/Forma Button v3 Contextual");
+            ClickNextStepBtnSerialNumberObject.Tap();
         }
 
+        public void ClickValidateBtnSerialNumberObject()
+        {
+            var ClickValidateBtnSerialNumberObject = altDriver.WaitForObject(By.PATH, "/TextEngrave/LevelNavigationPanel(Clone)/Canvas/NavNext Step/Forma Button v3 Contextual");
+            ClickValidateBtnSerialNumberObject.Tap();
+        }
 
     }
 }

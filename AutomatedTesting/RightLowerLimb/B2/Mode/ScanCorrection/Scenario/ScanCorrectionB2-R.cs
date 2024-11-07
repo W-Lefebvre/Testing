@@ -11,7 +11,8 @@ public partial class FullScanCorrectionB2R
     [OneTimeSetUp]
     public void OneTimeSetUp()
     {
-        altDriver = new AltDriver(host: "192.168.1.13", port: 13000, appName: "__default__");        helpers = new ScanCorrectionHelpersB2R(altDriver); // Initialisation avec le driver.
+        altDriver = new AltDriver(host: ConnexionConfig.Host, port: ConnexionConfig.Port, appName: ConnexionConfig.AppName);
+        helpers = new ScanCorrectionHelpersB2R(altDriver); // Initialisation avec le driver.
     }
 
     [OneTimeTearDown]
